@@ -7,8 +7,6 @@ const env = process.env.NODE_ENV === 'production'
   ? 'production'
   : 'development';
 
-const devtool = env === 'production' ? 'source-map' : 'eval-source-map';
-
 const extractOrInjectStyles = env !== 'production'
   ? 'vue-style-loader'
   : MiniCssExtractPlugin.loader;
@@ -20,7 +18,6 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js',
   },
-  devtool,
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
